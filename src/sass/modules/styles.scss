@@ -1,0 +1,13 @@
+@use './utilities.scss' as utilities;
+@use './variables' as variables;
+
+@use './base' as base;
+@use './layout' as layout;
+@use './modules' as modules;
+@use './state' as state;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}   

@@ -1,0 +1,205 @@
+@use '../../sass/modules/variables';
+@use '../../sass/modules/utilities';
+
+.section__one {
+
+    display: flex;
+    flex-direction: column;
+    flex: 1 100%;
+    display: block;
+
+    @include utilities.breakpoint(md) {
+        padding: 0 6rem;
+    }
+
+    .section__one__hero {
+
+        // .hero__image--desktop {
+        //     display: none;
+        // }
+
+        img {
+            display: block;
+            max-width: 100%;
+            object-fit: cover;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .section__one__content {
+        position: relative;
+        color: variables.$very-light-gray;
+        background-color: variables.$dark-violet;
+        height: 30rem;
+
+        .section__one__wave--left {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            // Desktop image to be shown
+        }
+
+        .section__one__content__text {
+
+            position: absolute;
+            top: 20%;
+
+            h2 {
+                font-size: 3rem;
+                line-height: 1;
+                text-align: center;
+                width: 15ch;
+                margin: auto;
+                font-family: variables.$dm-serif;
+                font-weight: variables.$regular-font;
+            }
+
+            p {
+                font-size: 1rem;
+                margin-top: 1rem;
+                text-align: center;
+                font-family: variables.$karla;
+                font-weight: 300;
+                padding: 0 7%;
+            }
+
+            button {
+                cursor: pointer;
+                border: none;
+                padding: 0.5rem 1rem;
+                background: none;
+                border: 2px solid variables.$very-light-gray;
+                color: variables.$very-light-gray;
+                text-transform: uppercase;
+                transition: 0.15s ease all;
+                font-family: variables.$karla;
+                letter-spacing: 2px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 1.5rem;
+
+                &:hover {
+                    background-color: variables.$very-dark-violet;
+                    color: variables.$very-light-gray;
+                }
+
+                &:active {
+                    transform: scale(0.96);
+                    background-color: variables.$very-light-gray;
+                    color: variables.$dark-violet;
+                }
+            }
+        }
+
+        .section__one__wave--right {
+            position: absolute;
+            right: 0;
+            top: 20.375rem;
+
+            // Desktop image to be shown
+        }
+    }
+}
+
+@media screen and (min-width: 30rem) {
+
+    .section__one {
+        
+        position: relative;
+        padding: 0;
+        margin: 0;
+
+        .section__one--line {
+            position: absolute;
+            top: 8rem;
+            left: 12.25%;
+            border-bottom: 1px solid variables.$very-light-gray;
+            z-index: 999;
+            width: 9%;
+        }
+
+        .section__one__hero {
+
+            position: relative;
+
+            .waves__desktop--left {
+                object-fit: contain;
+                position: absolute;
+                z-index: 99;
+                opacity: 1;
+                top: 25rem;
+                left: 0;
+            }
+
+            .waves__desktop--right {
+                object-fit: contain;
+                position: absolute;
+                z-index: 99;
+                opacity: 1;
+                top: 0;
+                right: 0;
+            }
+
+            .hero__image--mobile {
+                display: none;
+            }
+
+            .hero__image--desktop {
+                max-width: 100%;
+                object-fit: contain;
+                position: absolute;
+                z-index: 99;
+                right: 11rem;
+                top: 8rem;
+            }
+
+        }
+
+        .section__one__content {
+
+            height: 39rem;
+            padding: 0 12.25%;
+
+            .section__one__content__text {
+                margin-top: 3rem;
+                width: 50%;
+                z-index: 999;
+                
+                h2 {
+                    margin: 0;
+                    text-align: left;
+                    font-size: 4rem;
+                }
+                
+                p {
+                    text-align: left;
+                    margin-right: auto;
+                    font-size: 1.1rem;
+                    padding: 1rem 0;
+                    width: 49ch;
+                    padding-bottom: 2rem;
+                }
+
+                button {
+                    margin: 0;
+                    padding: 0.7rem 1.25rem;
+
+                    &:hover {
+                        color: variables.$very-light-gray;
+                    }
+                }
+            }
+
+            .wave--left--mobile,
+            .wave--right--mobile {
+                display: none;
+            }
+
+        }
+    }
+
+
+}
